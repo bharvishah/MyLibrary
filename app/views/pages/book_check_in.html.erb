@@ -1,0 +1,24 @@
+<h1>
+  List of books checked out: </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Book Title </th>
+      <th> Checked out to </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @checkouts.each do |c| %>
+    <tr>
+        <td><%= c.book.name %></td>
+        <td><%= c.patron.name %>
+        <td><%= link_to "Checkin", checkin_path(book_id:c.book.id), method: :post %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+<h3>
+  <%= link_to "Home", root_path %>
+
+</h3>

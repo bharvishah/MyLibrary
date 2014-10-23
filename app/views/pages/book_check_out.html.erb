@@ -1,0 +1,15 @@
+<%= form_for @checkout, url: check_out_path do |f| %>
+<div>
+<%= f.label "Book Title:  " %>
+<%= f.collection_select :book_id, Book.all, :id, :name  %>
+</div>
+
+
+<div>
+  <%= f.label "Patron's name: " %>
+
+  <%= f.collection_select :patron_id, Patron.all, :id, :name  %>
+
+</div>
+  <%= f.submit "check out" %>
+<% end %>

@@ -1,0 +1,11 @@
+
+  <h1> Check Out Info</h1>
+  <div><%= @book.name %></div>
+  <div><%= @patron.name %></div>
+
+  <%= f.label "Book checked out: " %>
+ <%= @book.is_checked_out %></p>
+
+  <%= link_to "Home", root_path %>
+
+<% end %>
